@@ -1,0 +1,26 @@
+db.Students.insertMany([
+   { "student_id": 1, "student_name": "Michael", "student_year": 1},
+   { "student_id": 2, "student_name": "Amanda", "student_year": 1},
+   { "student_id": 3, "student_name": "Gordon", "student_year": 3},
+   { "student_id": 4, "student_name": "Tom", "student_year": 3},
+   { "student_id": 5, "student_name": "Jane", "student_year": 2},
+]);
+
+db.Classes.insertMany([
+   { "course_name": "physics", "course_id": 33115, "num_students": 200},
+   { "course_name": "physics", "course_id": 33115, "num_students": 100},
+   { "course_name": "microeconomics", "course_id": 73250, "num_students": 80},
+   { "course_name": "concepts", "course_id": 21127, "num_students": 120},
+   { "course_name": "english", "course_id": 76101, "num_students": 50},
+   { "course_name": "history", "course_id": 79104, "num_students": 250},
+   { "course_name": "statistics", "course_id": 36225, "num_students": 30},
+   { "course_name": "statistics", "course_id": 36225, "num_students": 200},
+]);
+
+db.Students.find( {} ).limit(4)
+
+db.Students.find().sort( { student_year: -1 } )
+
+db.Students.find( {student_year: 1} ) 
+
+db.Classes.find( {num_students: {$lt: 100} } )
